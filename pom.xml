@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ca.magenta.pi</groupId>
+	<artifactId>ca.magenta.pi.parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>rRaspPI :: Parent POM</name>
+	<description>Parent Maven POM for the rRaspPI Project</description>
+
+	<organization>
+		<name>Magenta INC</name>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Jean-Paul Laberge</name>
+			<email>moonbeamzebra@magenta.ca</email>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<modules>
+		<module>ca.magenta.pi.remote.common</module>
+		<module>ca.magenta.pi.remote.client</module>
+		<module>ca.magenta.pi.remote</module>
+		<module>ca.magenta.pi.example</module>
+		<!-- Next is from pi4j.com project -->
+		<!-- <module>pi4j-example</module> -->
+	</modules>
+
+
+</project>
