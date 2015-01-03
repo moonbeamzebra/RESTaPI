@@ -1,0 +1,152 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ca.magenta.pi.example</artifactId>
+
+	<parent>
+		<groupId>ca.magenta.pi</groupId>
+		<artifactId>ca.magenta.pi.parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<name>Pi4J :: Java Examples</name>
+	<description>Pi4J Java Examples using the Pi4J Library
+Repackaged by jplaberge to enable 
+running remotely</description>
+
+
+
+
+	<dependencies>
+		<dependency>
+			<groupId>ca.magenta.pi</groupId>
+			<artifactId>ca.magenta.pi.remote.common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>ca.magenta.pi</groupId>
+			<artifactId>ca.magenta.pi.remote.client</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.pi4j</groupId>
+			<artifactId>pi4j-core</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>com.pi4j</groupId>
+					<artifactId>pi4j-native</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>oss-snapshots-repo</id>
+			<name>Sonatype OSS Maven Repository</name>
+			<url>https://oss.sonatype.org/content/groups/public</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>ControlGpioExample</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.kie</groupId>
+				<artifactId>kie-maven-plugin</artifactId>
+				<version>6.1.0.Final</version>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- <build> -->
+	<!-- <plugins> -->
+	<!-- <plugin> -->
+	<!-- <artifactId>maven-compiler-plugin</artifactId> -->
+	<!-- <version>2.5.1</version> -->
+	<!-- <executions> -->
+	<!-- <execution> -->
+	<!-- <id>default-testCompile</id> -->
+	<!-- <phase>test-compile</phase> -->
+	<!-- <goals> -->
+	<!-- <goal>testCompile</goal> -->
+	<!-- </goals> -->
+	<!-- <configuration> -->
+	<!-- <source>1.7</source> -->
+	<!-- <target>1.7</target> -->
+	<!-- </configuration> -->
+	<!-- </execution> -->
+	<!-- <execution> -->
+	<!-- <id>default-compile</id> -->
+	<!-- <phase>compile</phase> -->
+	<!-- <goals> -->
+	<!-- <goal>compile</goal> -->
+	<!-- </goals> -->
+	<!-- <configuration> -->
+	<!-- <source>1.7</source> -->
+	<!-- <target>1.7</target> -->
+	<!-- </configuration> -->
+	<!-- </execution> -->
+	<!-- </executions> -->
+	<!-- <inherited>true</inherited> -->
+	<!-- <configuration> -->
+	<!-- <source>1.7</source> -->
+	<!-- <target>1.7</target> -->
+	<!-- </configuration> -->
+	<!-- </plugin> -->
+	<!-- </plugins> -->
+	<!-- </build> -->
+</project>
