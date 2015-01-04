@@ -25,7 +25,9 @@
  * #L%
  */
 
-
+// Modified by jplaberge
+// Use WiringpiConnector instance instead of com.pi4j.wiringpi.SoftPwm
+// Allow to run remotely or locally
 import com.pi4j.connector.WiringpiConnector;
 import com.pi4j.connector.WiringpiConnector.WiringpiConnectorFactory;
 
