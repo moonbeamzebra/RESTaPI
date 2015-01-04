@@ -26,14 +26,14 @@
  */
 
 
-import com.pi4j.connector.WiringpiConnectorInterface;
-import com.pi4j.connector.WiringpiConnectorInterface.WiringpiConnector;
+import com.pi4j.connector.WiringpiConnector;
+import com.pi4j.connector.WiringpiConnector.WiringpiConnectorFactory;
 
 public class ModifiedWiringPiSoftPWMExample {
     
     public static void main(String[] args) throws InterruptedException {
         
-        WiringpiConnectorInterface wiringpiConnector = WiringpiConnector.getInstance();
+        WiringpiConnector wiringpiConnector = WiringpiConnectorFactory.getInstance();
     	
         // initialize wiringPi library
         wiringpiConnector.wiringPiSetup();

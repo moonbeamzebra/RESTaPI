@@ -3,7 +3,7 @@ package com.pi4j.connector;
 import com.pi4j.wiringpi.GpioInterruptListener;
 
 
-public class LocalWiringpiConnector implements WiringpiConnectorInterface {
+public class LocalWiringpiConnector implements WiringpiConnector {
 
     // com.pi4j.wiringpi.Gpio
     public int wiringPiSetup()

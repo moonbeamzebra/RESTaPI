@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import com.pi4j.system.NetworkInfoLowLevel;
 
-public class LocalNetworkInfoConnector implements NetworkInfoConnectorInterface {
+public class LocalPi4jNetworkInfoConnector implements Pi4jNetworkInfoConnector {
 
 	@Override
 	public String getHostname() throws IOException, InterruptedException {

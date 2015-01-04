@@ -5,9 +5,9 @@ import java.text.ParseException;
 
 import org.apache.log4j.Logger;
 
-import com.pi4j.connector.NetworkInfoConnectorInterface;
+import com.pi4j.connector.Pi4jNetworkInfoConnector;
 import com.pi4j.connector.Pi4jConnectorException;
-import com.pi4j.connector.SystemInfoConnectorInterface;
+import com.pi4j.connector.Pi4jSystemInfoConnector;
 
 import ca.magenta.pi.remote.common.Globals;
 import ca.magenta.pi.remote.common.WiringPiReturnBooleanValue;
@@ -40,7 +40,7 @@ limitations under the License.
  * @since January 2014
  */
 // No change required for pi4j-1.0-SNAPSHOT - jplaberge
-public class RemoteRaspberryPiConnector implements SystemInfoConnectorInterface, NetworkInfoConnectorInterface {
+public class RemoteRaspberryPiConnector implements Pi4jSystemInfoConnector, Pi4jNetworkInfoConnector {
 
     static Logger logger = Logger.getLogger(RemoteRaspberryPiConnector.class);
 

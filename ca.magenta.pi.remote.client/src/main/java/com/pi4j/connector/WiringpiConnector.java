@@ -4,8 +4,8 @@ import org.apache.log4j.Logger;
 
 import com.pi4j.wiringpi.GpioInterruptListener;
 
-public interface WiringpiConnectorInterface  {
-
+public interface WiringpiConnector  {
+	
 	// Next added by jplaberge - January 2014
 	public void shutdown();
 	
@@ -54,20 +54,23 @@ public interface WiringpiConnectorInterface  {
      * @version 0.1
      * @since January 02, 2014
      */
-    public static class WiringpiConnector
+    public static class WiringpiConnectorFactory
     {
-    	private static Logger logger = Logger.getLogger(WiringpiConnector.class);
+    	private static final String WIRINGPI_CONNECTOR_CLASS_PROPERTY = "wiringpiConnectorClass";
 
-    	public static WiringpiConnectorInterface getInstance()
+    	private static Logger logger = Logger.getLogger(WiringpiConnectorFactory.class);
+
+    	public static WiringpiConnector getInstance()
     	{
-    		WiringpiConnectorInterface wiringpiConnector = null;
+    		WiringpiConnector wiringpiConnector = null;
     		
-        	String connectorClass = ConnectorUtils.readConnectorClassProperty("wiringpiConnectorClass");
+    		
+        	String connectorClass = ConnectorUtils.readConnectorClassProperty(WIRINGPI_CONNECTOR_CLASS_PROPERTY);
             if (connectorClass == null) {
                 wiringpiConnector = new LocalWiringpiConnector();
             } else {
                 try {
-                    wiringpiConnector = (WiringpiConnectorInterface) Class.forName(connectorClass).newInstance();
+                    wiringpiConnector = (WiringpiConnector) Class.forName(connectorClass).newInstance();
                 } catch (Throwable e) {
                     logger.error("", e);
                     // Re-throw

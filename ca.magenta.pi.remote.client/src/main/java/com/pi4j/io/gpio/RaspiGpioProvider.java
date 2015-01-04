@@ -11,7 +11,8 @@ import org.apache.log4j.Logger;
 import com.pi4j.connector.ConnectorUtils;
 import com.pi4j.connector.LocalWiringpiConnector;
 import com.pi4j.connector.Pi4jConnectorException;
-import com.pi4j.connector.WiringpiConnectorInterface;
+import com.pi4j.connector.WiringpiConnector;
+import com.pi4j.connector.WiringpiConnector.WiringpiConnectorFactory;
 import com.pi4j.io.gpio.event.PinListener;
 import com.pi4j.wiringpi.GpioInterruptEvent;
 import com.pi4j.wiringpi.GpioInterruptListener;
@@ -51,12 +52,12 @@ import com.pi4j.wiringpi.GpioInterruptListener;
  */
 
 //Modified by jplaberge@magenta.ca :Add log4j facilities 
-//                                  Add WiringpiConnectorInterface layer
+//                                  Add WiringpiConnector layer
 //										Every reference to original:
 //											com.pi4j.wiringpi.Gpio,
 //											com.pi4j.wiringpi.GpioUtil and
 //											com.pi4j.wiringpi.GpioInterrupt
-//										have been replaced WiringpiConnectorInterface
+//										have been replaced WiringpiConnector
 //										Original implementation in LocalWiringpiConnector
 //                                  Call com.pi4j.wiringpi.GpioInterruptNonNative instead of
 //                                  com.pi4j.wiringpi.GpioInterrupt
@@ -70,30 +71,16 @@ public class RaspiGpioProvider extends GpioProviderBase implements GpioProvider,
     
     // Next 2 added jplaberge
     private static Logger logger = Logger.getLogger(RaspiGpioProvider.class);
-    private WiringpiConnectorInterface wiringpiConnector;
+    private WiringpiConnector wiringpiConnector;
     
     public RaspiGpioProvider() {
         // set wiringPi interface for internal use
         // we will use the WiringPi pin number scheme with the wiringPi library
 
-        // /////////////////////////////
-        // Start of modifs by jplaberge
-        String connectorClass = ConnectorUtils.readConnectorClassProperty("wiringpiConnectorClass");
-        if (connectorClass == null) {
-            this.wiringpiConnector = new LocalWiringpiConnector();
-        } else {
-            try {
-                this.wiringpiConnector = (WiringpiConnectorInterface) Class.forName(connectorClass).newInstance();
-            } catch (Throwable e) {
-                logger.error("", e);
-                // Re-throw
-                throw new Pi4jConnectorException("", e);
-            }
-        }
-        // End of modifs by jplaberge
-        // ///////////////////////////
+        // Next added by jplaberge
+    	wiringpiConnector = WiringpiConnectorFactory.getInstance(); 
 
-        this.wiringpiConnector.wiringPiSetup();
+        wiringpiConnector.wiringPiSetup();
     }
     
     @Override

@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 
 import com.pi4j.connector.Pi4jConnectorException;
-import com.pi4j.connector.WiringpiConnectorInterface;
+import com.pi4j.connector.WiringpiConnector;
 import com.pi4j.wiringpi.GpioInterruptListener;
 
 import ca.magenta.pi.remote.common.Globals;
@@ -38,7 +38,7 @@ limitations under the License.
  * @version 0.1
  * @since January 2014
  */
-public class RemoteWiringpiConnector implements WiringpiConnectorInterface {
+public class RemoteWiringpiConnector implements WiringpiConnector {
 
     static Logger logger = Logger.getLogger(RemoteWiringpiConnector.class);
 

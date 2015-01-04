@@ -6,7 +6,7 @@ import java.text.ParseException;
 import com.pi4j.system.SystemInfoLowLevel;
 
 //No change required for pi4j-1.0-SNAPSHOT - jplaberge
-public class LocalSystemInfoConnector implements SystemInfoConnectorInterface {
+public class LocalPi4jSystemInfoConnector implements Pi4jSystemInfoConnector {
 
 	@Override
 	public String[] getCpuInfo() throws IOException, InterruptedException {

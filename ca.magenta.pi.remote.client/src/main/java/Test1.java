@@ -32,7 +32,7 @@ import java.io.IOException;
 
 import ca.magenta.pi.remote.connector.RemoteWiringpiConnector;
 
-import com.pi4j.connector.WiringpiConnectorInterface;
+import com.pi4j.connector.WiringpiConnector;
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 
@@ -52,7 +52,7 @@ public class Test1 {
         // create gpio controller
         final GpioController gpio = GpioFactory.getInstance();
         
-        WiringpiConnectorInterface wiringpiConnector = new RemoteWiringpiConnector();
+        WiringpiConnector wiringpiConnector = new RemoteWiringpiConnector();
 
         wiringpiConnector.wiringPiSetup();
         

@@ -40,34 +40,21 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 import com.pi4j.connector.ConnectorUtils;
-import com.pi4j.connector.LocalNetworkInfoConnector;
-import com.pi4j.connector.NetworkInfoConnectorInterface;
+import com.pi4j.connector.LocalPi4jNetworkInfoConnector;
+import com.pi4j.connector.Pi4jNetworkInfoConnector;
 import com.pi4j.connector.Pi4jConnectorException;
+import com.pi4j.connector.Pi4jNetworkInfoConnector.Pi4jNetworkInfoConnectorFactory;
 
 //OK for pi4j-1.0-SNAPSHOT - jplaberge
 public class NetworkInfo  {
 	
 	// Add by jplaberge - January 2014
     private static Logger logger = Logger.getLogger(NetworkInfo.class);
-	private static NetworkInfoConnectorInterface networkInfoConnector = null;
+	private static Pi4jNetworkInfoConnector pi4jNetworkInfoConnector = null;
 	
 	static 
 	{
-
-        String connectorClass = ConnectorUtils.readConnectorClassProperty("networkInfoConnectorClass");
-        if (connectorClass == null) {
-        	networkInfoConnector = new LocalNetworkInfoConnector();
-        }
-        else
-        {
-            try {
-            	networkInfoConnector = (NetworkInfoConnectorInterface) Class.forName(connectorClass).newInstance();
-            } catch (Throwable e) {
-                logger.error("", e);
-                // Re-throw
-                throw new Pi4jConnectorException("", e);
-            }
-        }
+		pi4jNetworkInfoConnector = Pi4jNetworkInfoConnectorFactory.getInstance();
 	}
     // End of modifs by jplaberge
     // ///////////////////////////
@@ -81,37 +68,37 @@ public class NetworkInfo  {
     public static String getHostname() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in NetworkInfoLowLevel.java
-    	return networkInfoConnector.getHostname();
+    	return pi4jNetworkInfoConnector.getHostname();
     }
 
     public static String getFQDN() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in NetworkInfoLowLevel.java
-    	return networkInfoConnector.getHostname();
+    	return pi4jNetworkInfoConnector.getHostname();
     }
 
     public static String[] getIPAddresses() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in NetworkInfoLowLevel.java
-    	return networkInfoConnector.getIPAddresses();
+    	return pi4jNetworkInfoConnector.getIPAddresses();
     }
 
     public static String getIPAddress() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in NetworkInfoLowLevel.java
-    	return networkInfoConnector.getIPAddress();
+    	return pi4jNetworkInfoConnector.getIPAddress();
     }
 
     public static String[] getFQDNs() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in NetworkInfoLowLevel.java
-    	return networkInfoConnector.getFQDNs();
+    	return pi4jNetworkInfoConnector.getFQDNs();
     }
 
     public static String[] getNameservers() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in NetworkInfoLowLevel.java
-    	return networkInfoConnector.getNameservers();
+    	return pi4jNetworkInfoConnector.getNameservers();
     }
     
 //    public static Map<String,NetworkInterface> getNetworkInterfaces() throws IOException, InterruptedException {
