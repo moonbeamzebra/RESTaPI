@@ -38,14 +38,11 @@ import java.io.InputStream;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
-import com.pi4j.connector.ConnectorUtils;
-import com.pi4j.connector.LocalSystemInfoConnector;
-import com.pi4j.connector.Pi4jConnectorException;
-import com.pi4j.connector.SystemInfoConnectorInterface;
+import com.pi4j.connector.Pi4jSystemInfoConnector;
+import com.pi4j.connector.Pi4jSystemInfoConnector.Pi4jSystemInfoConnectorFactory;
 
 
 // OK for pi4j-1.0-SNAPSHOT - jplaberge
@@ -53,25 +50,11 @@ public class SystemInfo {
 	
 	// Add by jplaberge - January 2014
     private static Logger logger = Logger.getLogger(SystemInfo.class);
-	private static SystemInfoConnectorInterface systemInfoConnector = null;
+	private static Pi4jSystemInfoConnector pi4jSystemInfoConnector = null;
 	
 	static 
 	{
-
-        String connectorClass = ConnectorUtils.readConnectorClassProperty("systemInfoConnectorClass");
-        if (connectorClass == null) {
-        	systemInfoConnector = new LocalSystemInfoConnector();
-        }
-        else
-        {
-            try {
-            	systemInfoConnector = (SystemInfoConnectorInterface) Class.forName(connectorClass).newInstance();
-            } catch (Throwable e) {
-                logger.error("", e);
-                // Re-throw
-                throw new Pi4jConnectorException("", e);
-            }
-        }
+		pi4jSystemInfoConnector = Pi4jSystemInfoConnectorFactory.getInstance();
 	}
     // End of modifs by jplaberge
     // ///////////////////////////
@@ -98,7 +81,7 @@ public class SystemInfo {
         if (cpuInfo == null) {
             cpuInfo = new HashMap<String, String>();
             // Next modified jplaberge
-            String result[] = systemInfoConnector.getCpuInfo() ;
+            String result[] = pi4jSystemInfoConnector.getCpuInfo() ;
             if(result != null){
                 for(String line : result) {
                     String parts[] = line.split(":", 2);
@@ -167,97 +150,97 @@ public class SystemInfo {
 
     public static String getOsName() throws IOException, InterruptedException {
     	// Next modified jplaberge
-        return systemInfoConnector.getProperty("os.name");
+        return pi4jSystemInfoConnector.getProperty("os.name");
     }
 
     public static String getOsVersion() throws IOException, InterruptedException {
     	// Next modified jplaberge
-    	return systemInfoConnector.getProperty("os.version");
+    	return pi4jSystemInfoConnector.getProperty("os.version");
     }
 
     public static String getOsArch() throws IOException, InterruptedException  {
     	// Next modified jplaberge
-    	return systemInfoConnector.getProperty("os.arch");
+    	return pi4jSystemInfoConnector.getProperty("os.arch");
     }
     
     public static String getOsFirmwareBuild() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-        return systemInfoConnector.getOsFirmwareBuild();
+        return pi4jSystemInfoConnector.getOsFirmwareBuild();
     }  
     
     public static String getOsFirmwareDate() throws IOException, InterruptedException, ParseException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-    	return systemInfoConnector.getOsFirmwareDate();
+    	return pi4jSystemInfoConnector.getOsFirmwareDate();
     }  
     
     public static String getJavaVendor() throws IOException, InterruptedException  {
     	// Next modified jplaberge
-        return systemInfoConnector.getProperty("java.vendor");
+        return pi4jSystemInfoConnector.getProperty("java.vendor");
     }
  
     public static String getJavaVendorUrl() throws IOException, InterruptedException {
     	// Next modified jplaberge
-        return systemInfoConnector.getProperty("java.vendor.url");
+        return pi4jSystemInfoConnector.getProperty("java.vendor.url");
     }
  
     public static String getJavaVersion() throws IOException, InterruptedException {
     	// Next modified jplaberge
-        return systemInfoConnector.getProperty("java.version");
+        return pi4jSystemInfoConnector.getProperty("java.version");
     }
 
     public static String getJavaVirtualMachine() throws IOException, InterruptedException {
     	// Next modified jplaberge
-        return systemInfoConnector.getProperty("java.vm.name");
+        return pi4jSystemInfoConnector.getProperty("java.vm.name");
     }
 
     public static String getJavaRuntime() {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-        return systemInfoConnector.getJavaRuntime();
+        return pi4jSystemInfoConnector.getJavaRuntime();
     }
     
     public static boolean isHardFloatAbi() {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-        return systemInfoConnector.isHardFloatAbi();
+        return pi4jSystemInfoConnector.isHardFloatAbi();
     }
     
     public static long getMemoryTotal() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-    	return systemInfoConnector.getMemoryTotal();
+    	return pi4jSystemInfoConnector.getMemoryTotal();
     }
 
     public static long getMemoryUsed() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-    	return systemInfoConnector.getMemoryUsed();
+    	return pi4jSystemInfoConnector.getMemoryUsed();
     }
 
     public static long getMemoryFree() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-    	return systemInfoConnector.getMemoryFree();
+    	return pi4jSystemInfoConnector.getMemoryFree();
     }
 
     public static long getMemoryShared() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-    	return systemInfoConnector.getMemoryShared();
+    	return pi4jSystemInfoConnector.getMemoryShared();
     }
 
     public static long getMemoryBuffers() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-    	return systemInfoConnector.getMemoryBuffers();
+    	return pi4jSystemInfoConnector.getMemoryBuffers();
     }
 
     public static long getMemoryCached() throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-    	return systemInfoConnector.getMemoryCached();
+    	return pi4jSystemInfoConnector.getMemoryCached();
     }
 
     public static BoardType getBoardType() throws IOException, InterruptedException
@@ -298,13 +281,13 @@ public class SystemInfo {
     public static float getCpuTemperature() throws IOException, InterruptedException, NumberFormatException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-    	return systemInfoConnector.getCpuTemperature();
+    	return pi4jSystemInfoConnector.getCpuTemperature();
     }
 
     private static float getVoltage(String id) throws IOException, InterruptedException, NumberFormatException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-       return systemInfoConnector.getVoltage(id);
+       return pi4jSystemInfoConnector.getVoltage(id);
 
     }
     
@@ -327,7 +310,7 @@ public class SystemInfo {
     private static boolean getCodecEnabled(String codec) throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-        return systemInfoConnector.getCodecEnabled(codec);
+        return pi4jSystemInfoConnector.getCodecEnabled(codec);
     }
 
     public static boolean getCodecH264Enabled() throws IOException, InterruptedException {
@@ -345,7 +328,7 @@ public class SystemInfo {
     private static long getClockFrequency(String target) throws IOException, InterruptedException {
     	// Next modified jplaberge
     	// Original implementation in SystemInfoLowLevel.java
-        return systemInfoConnector.getClockFrequency(target);
+        return pi4jSystemInfoConnector.getClockFrequency(target);
     }
 
     public static long getClockFrequencyArm() throws IOException, InterruptedException {
