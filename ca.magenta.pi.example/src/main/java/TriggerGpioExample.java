@@ -63,11 +63,12 @@ public class TriggerGpioExample {
         
         System.out.println(" ... complete the GPIO #02 circuit and see the triggers take effect.");
         
-        // setup gpio pins #04, #05, #06 as an output pins and make sure they are all LOW at startup
+        // Changed to pins #01, #03, #04 by jplaberge
+        // setup gpio pins #01, #03, #04 as an output pins and make sure they are all LOW at startup
         GpioPinDigitalOutput myLed[] = { 
-            gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "LED #1", PinState.LOW),
-            gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, "LED #2", PinState.LOW),
-            gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, "LED #3", PinState.LOW) 
+            gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "LED #1", PinState.LOW),
+            gpio.provisionDigitalOutputPin(RaspiPin.GPIO_03, "LED #2", PinState.LOW),
+            gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, "LED #3", PinState.LOW) 
           };
         
         // create a gpio control trigger on the input pin ; when the input goes HIGH, also set gpio pin #04 to HIGH
