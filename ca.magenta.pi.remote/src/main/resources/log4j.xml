@@ -2,7 +2,7 @@
 <!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-<!-- see http://stackoverflow.com/questions/8489551/logging-error-to-stderr-and-debug-info-to-stdout-with-log4j -->
+	<!-- see http://stackoverflow.com/questions/8489551/logging-error-to-stderr-and-debug-info-to-stdout-with-log4j -->
 
 	<!-- Appenders -->
 
@@ -44,17 +44,17 @@
 
 	<!-- Application Loggers -->
 
-<!-- 	<logger name="ca.magenta.correlation.tools" additivity="false"> -->
-<!-- 		<level value="error" /> -->
-<!-- 		<appender-ref ref="stderr" /> -->
-<!-- 		<appender-ref ref="stdout" /> -->
-<!-- 	</logger> -->
-	
-<!-- 	<logger name="ca.magenta.correlation.test" additivity="false"> -->
-<!-- 		<level value="info" /> -->
-<!-- 		<appender-ref ref="stderr" /> -->
-<!-- 		<appender-ref ref="stdout" /> -->
-<!-- 	</logger> -->
+	<!-- <logger name="ca.magenta.correlation.tools" additivity="false"> -->
+	<!-- <level value="error" /> -->
+	<!-- <appender-ref ref="stderr" /> -->
+	<!-- <appender-ref ref="stdout" /> -->
+	<!-- </logger> -->
+
+	<!-- <logger name="ca.magenta.correlation.test" additivity="false"> -->
+	<!-- <level value="info" /> -->
+	<!-- <appender-ref ref="stderr" /> -->
+	<!-- <appender-ref ref="stdout" /> -->
+	<!-- </logger> -->
 
 	<logger name="ca.magenta" additivity="false">
 		<level value="all" />
@@ -62,8 +62,16 @@
 		<appender-ref ref="stdout" />
 	</logger>
 
+	<logger name="oejs.AbstractConnector" additivity="false">
+		<level value="info" />
+		<appender-ref ref="stderr" />
+		<appender-ref ref="stdout" />
+	</logger>
+
+
 	<root>
 		<!-- <priority value="debug"></priority> -->
+		<level value="none" />
 		<appender-ref ref="stderr" />
 		<appender-ref ref="stdout" />
 	</root>
