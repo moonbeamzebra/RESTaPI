@@ -36,7 +36,16 @@ public interface Pi4jNetworkInfoConnector  {
             	pi4jNetworkInfoConnector = new LocalPi4jNetworkInfoConnector();
             } else {
                 try {
+
+                	String info = "Starting alternate Connector Class=" + connectorClass + " ...";
+                    logger.info(info);
+                	
                 	pi4jNetworkInfoConnector = (Pi4jNetworkInfoConnector) Class.forName(connectorClass).newInstance();
+
+                	info = "Started";
+                    logger.info(info);
+                	
+
                 } catch (Throwable e) {
                     logger.error("", e);
                     // Re-throw

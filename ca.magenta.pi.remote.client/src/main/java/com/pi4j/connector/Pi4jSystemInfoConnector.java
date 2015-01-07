@@ -45,7 +45,14 @@ public interface Pi4jSystemInfoConnector  {
                 pi4jSystemInfoConnector = new LocalPi4jSystemInfoConnector();
             } else {
                 try {
+                	String info = "Starting alternate Connector Class=" + connectorClass + " ...";
+                    logger.info(info);
+                	
                     pi4jSystemInfoConnector = (Pi4jSystemInfoConnector) Class.forName(connectorClass).newInstance();
+
+                	info = "Started";
+                    logger.info(info);
+
                 } catch (Throwable e) {
                     logger.error("", e);
                     // Re-throw

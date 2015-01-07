@@ -64,12 +64,15 @@ public class Globals {
         }
 
         logger.info("gpioInterruptHandlerPort=" + port);
+        String info = "gpioInterruptHandlerPort=" + port;
+        logger.info(info);
         return port;
     }
 
     public static String getRemoteRaspberryPiIPAddress() {
         String remoteRaspberryPiIPAddress = remoteConectorProps.getProperty("remoteRaspberryPiIPAddress", DEFAULT_remoteRaspberryPiIPAddress);
-        logger.info("remoteRaspberryPiIPAddress=" + remoteRaspberryPiIPAddress);
+        String info = "remoteRaspberryPiIPAddress=" + remoteRaspberryPiIPAddress;
+        logger.info(info);
         return remoteRaspberryPiIPAddress;
     }
 
@@ -77,7 +80,8 @@ public class Globals {
     public static String getRestURL()
     {
         String restURL = Globals.getRestTransport() + "://" + getRemoteRaspberryPiIPAddress() + ":" + Globals.getRestPort() + Globals.REST_PATH;
-        logger.info("RestURL is " + restURL);
+        String info = "RestURL is " + restURL;
+        logger.info(info);
         return restURL;    
     }
     
@@ -89,7 +93,8 @@ public class Globals {
             restTransport = DEFAULT_restTransport;
         }
 
-        logger.info("restTransport=" + restTransport);
+        String info = "restTransport=" + restTransport;
+        logger.info(info);
         return restTransport;
     }
 

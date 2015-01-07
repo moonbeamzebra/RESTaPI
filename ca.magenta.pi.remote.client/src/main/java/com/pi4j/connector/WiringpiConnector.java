@@ -70,7 +70,15 @@ public interface WiringpiConnector  {
                 wiringpiConnector = new LocalWiringpiConnector();
             } else {
                 try {
+                	
+                	String info = "Starting alternate Connector Class=" + connectorClass + " ...";
+                    logger.info(info);
+                	
                     wiringpiConnector = (WiringpiConnector) Class.forName(connectorClass).newInstance();
+
+                	info = "Started";
+                    logger.info(info);
+
                 } catch (Throwable e) {
                     logger.error("", e);
                     // Re-throw
