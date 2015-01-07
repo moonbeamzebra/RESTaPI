@@ -31,7 +31,7 @@
 import com.pi4j.connector.WiringpiConnector;
 import com.pi4j.connector.WiringpiConnector.WiringpiConnectorFactory;
 
-public class ModifiedWiringPiSoftPWMExample {
+public class WiringPiSoftPWMExampleModified {
     
     public static void main(String[] args) throws InterruptedException {
         

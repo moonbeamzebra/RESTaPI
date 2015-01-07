@@ -34,7 +34,7 @@ import com.pi4j.wiringpi.GpioInterruptListener;
 import com.pi4j.wiringpi.GpioInterruptEvent;
 import com.pi4j.wiringpi.GpioUtil;
 
-public class ModifiedWiringPiGpioInterruptExample {
+public class WiringPiGpioInterruptExampleModified {
     
     public static void main(String args[]) throws InterruptedException {
     	
