@@ -44,11 +44,11 @@
 
 	<!-- Application Loggers -->
 
-<!-- 	<logger name="ca.magenta.correlation.tools" additivity="false"> -->
-<!-- 		<level value="error" /> -->
-<!-- 		<appender-ref ref="stderr" /> -->
-<!-- 		<appender-ref ref="stdout" /> -->
-<!-- 	</logger> -->
+	<logger name="com.pi4j.connector" additivity="false">
+		<level value="info" />
+		<appender-ref ref="stderr" />
+		<appender-ref ref="stdout" />
+	</logger>
 	
 	<logger name="com.pi4j" additivity="false">
 		<level value="error" />
