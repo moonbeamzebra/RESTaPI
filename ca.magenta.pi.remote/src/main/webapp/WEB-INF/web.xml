@@ -21,7 +21,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>WiringPI Web Application</servlet-name>
-		<url-pattern>/RESTAPI/*</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 
 	<listener>

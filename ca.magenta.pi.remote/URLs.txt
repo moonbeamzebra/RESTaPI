@@ -1,35 +1,35 @@
 ////////////////////////////
 // com.pi4j.wiringpi.Gpio //
 ////////////////////////////
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/setup
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/setup
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/pinMode/{mode}		
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/pinMode/1		
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/pinMode/{mode}		
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/pinMode/1		
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/pullUpDnControl/{pud}
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/2/pullUpDnControl/1
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/pullUpDnControl/{pud}
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/pullUpDnControl/1
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/digitalWrite/{intValue}
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/digitalWrite/0
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/digitalWrite/{intValue}
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/digitalWrite/0
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/pwmWrite/{value}
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/pwmWrite/1
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/pwmWrite/{value}
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/pwmWrite/1
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/digitalRead
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/digitalRead
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/digitalRead
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/digitalRead
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/delay/{howLong}
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/delay/2000
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/delay/{howLong}
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/delay/2000
 
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/millis
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/millis
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/delayMicroseconds/{howLong}
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/delayMicroseconds/2000000
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/delayMicroseconds/{howLong}
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/delayMicroseconds/2000000
 
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/piBoardRev
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/piBoardRev
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/wpiPinToGpio
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/wpiPinToGpio
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/wpiPinToGpio
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/wpiPinToGpio
 	
 	// Not implemented
 	//public static native int wiringPiSetupSys();
@@ -54,131 +54,132 @@ http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/wpiPinToGp
 	////////////////////////////////
 	// com.pi4j.wiringpi.UtilGpio //
 	////////////////////////////////
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/export/{direction}
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/export/1
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/export/{direction}
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/export/1
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/unexport
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/unexport
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/unexport
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/unexport
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/isExported
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/isExported
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/isExported
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/isExported
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/setEdgeDetection/{edge}
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/setEdgeDetection/1
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/setEdgeDetection/{edge}
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/setEdgeDetection/1
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/getEdgeDetection
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/getEdgeDetection
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/getEdgeDetection
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/getEdgeDetection
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/setDirection/{direction}
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/setDirection/1
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/setDirection/{direction}
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/setDirection/1
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/getDirection
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/getDirection
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/getDirection
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/getDirection
 
-	// http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/isPinSupported
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/isPinSupported
+	// http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/isPinSupported
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/isPinSupported
 
 	/////////////////////////////////////
 	// com.pi4j.wiringpi.GpioInterrupt //
 	/////////////////////////////////////
-	//http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/enablePinStateChangeCallback
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/enablePinStateChangeCallback
+	//http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/enablePinStateChangeCallback
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/enablePinStateChangeCallback
 
-	//http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/disablePinStateChangeCallback
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/disablePinStateChangeCallback
+	//http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/disablePinStateChangeCallback
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/disablePinStateChangeCallback
 
 	///////////////////////////////
 	// com.pi4j.wiringpi.SoftPwm //
 	///////////////////////////////
-	//http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/softPwmCreate/{initialValue}/{pwmRange}
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/softPwmCreate/0/100
+	//http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/softPwmCreate/{initialValue}/{pwmRange}
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/softPwmCreate/0/100
 
-	//http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/{pin}/softPwmWrite/{value}
-http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/softPwmWrite/20
+	//http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/{pin}/softPwmWrite/{value}
+http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/softPwmWrite/20
 
 
 
 // ControlGpioExample
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/setup
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/isPinSupported
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/isExported
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/getDirection
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/setDirection/1
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/pinMode/1
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/digitalWrite/1
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/digitalRead
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/setup
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/isPinSupported
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/exporte/1
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/isExported
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/getDirection
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/setDirection/1
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/pinMode/1
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/digitalWrite/1
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/digitalRead
 sleep 2
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/digitalWrite/0
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/1/digitalRead
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/digitalWrite/0
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/digitalRead
 
 //ListenGpioExample
-// Start REST server on a Raspberry PI: java -jar jetty-runner-8.1.14.v20131031.jar --path /remoteRaspberryPI remoteRaspberryPI.war
 // To see interrupts; in terminal 1:    telnet raspberrypi 8181
 // In terminal 2, do the following commands:
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/setup
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/2/wpiPinToGpio
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/2/export/0
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/2/pinMode/0
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/2/setEdgeDetection/1
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/2/wpiPinToGpio
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/2/pullUpDnControl/1
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/wiringPiGpio/pins/2/enablePinStateChangeCallback
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/setup
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/wpiPinToGpio
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/export/0
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/pinMode/0
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/setEdgeDetection/1
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/wpiPinToGpio
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/pullUpDnControl/1
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/enablePinStateChangeCallback
+echo "... complete the GPIO #02 circuit and see the listener feedback here in terminal 1."
 
 
 //SystemInfo
 # HARDWARE INFO
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/cpu/info
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/cpu/temperature
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/voltage/core
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/isHardFloatAbi
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/cpu/info
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/cpu/temperature
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/voltage/core
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/isHardFloatAbi
 # MEMORY INFO
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/memory/total
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/memory/used
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/memory/free
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/memory/shared
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/memory/buffers
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/memory/cached
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/voltage/sdram_c
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/voltage/sdram_i
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/voltage/sdram_p
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/memory/total
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/memory/used
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/memory/free
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/memory/shared
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/memory/buffers
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/memory/cached
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/voltage/sdram_c
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/voltage/sdram_i
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/voltage/sdram_p
 # OPERATING SYSTEM INFO
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/os/name
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/os/version
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/os/architecture
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/firmware/build
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/firmware/date
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/os/name
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/os/version
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/os/architecture
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/firmware/build
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/firmware/date
 # JAVA ENVIRONMENT INFO
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/java/vendor
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/java/vendor.url
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/java/version
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/java/vm.name
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/java/runtime
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/java/vendor
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/java/vendor.url
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/java/version
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/java/vm.name
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/java/runtime
 #NETWORK INFO
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jNetworkInfo/hostname
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jNetworkInfo/fqdns
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jNetworkInfo/fqdn
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jNetworkInfo/ipAddresses
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jNetworkInfo/ipAddress
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jNetworkInfo/nameservers
+curl http://raspberrypi:8080/RESTaPI/pi4jNetworkInfo/hostname
+curl http://raspberrypi:8080/RESTaPI/pi4jNetworkInfo/fqdns
+curl http://raspberrypi:8080/RESTaPI/pi4jNetworkInfo/fqdn
+curl http://raspberrypi:8080/RESTaPI/pi4jNetworkInfo/ipAddresses
+curl http://raspberrypi:8080/RESTaPI/pi4jNetworkInfo/ipAddress
+curl http://raspberrypi:8080/RESTaPI/pi4jNetworkInfo/nameservers
 # CODEC INFO
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/codecEnabled/H264
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/codecEnabled/MPG2
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/codecEnabled/WVC1
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/codecEnabled/H264
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/codecEnabled/MPG2
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/codecEnabled/WVC1
 # CLOCK INFO
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/arm
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/core
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/h264
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/isp
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/v3d
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/uart
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/pwm
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/emmc
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/pixel
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/vec
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/hdmi
-curl http://raspberrypi:8080/remoteRaspberryPI/RESTAPI/pi4jSystemInfo/clockFrequency/dpi
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/arm
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/core
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/h264
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/isp
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/v3d
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/uart
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/pwm
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/emmc
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/pixel
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/vec
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/hdmi
+curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/dpi
 
 
 
 
-java -jar jetty-runner-8.1.14.v20131031.jar --path /remoteRaspberryPI remoteRaspberryPI.war
+java -cp jetty-runner-8.1.16.v20140903.jar org.mortbay.jetty.runner.Runner --path /RESTaPI remoteRaspberryPI.war

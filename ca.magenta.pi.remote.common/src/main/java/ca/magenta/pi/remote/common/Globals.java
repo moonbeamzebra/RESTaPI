@@ -35,20 +35,20 @@ public class Globals {
 
     private static Logger logger = Logger.getLogger(Globals.class);
     
-    public static final String PROPS_FILE_NAME_PROP = "rRaspPI.properties.file";
-    public static final String PROPS_FILE_NAME = "rRaspPI.properties";
+    public static final String PROPS_FILE_NAME_PROP = "RESTaPI.properties.file";
+    public static final String PROPS_FILE_NAME = "RESTaPI.properties";
 
-    public static Properties remoteConectorProps = new Properties();
+    public static Properties remoteConnectorProps = new Properties();
 
-    private static final String DEFAULT_remoteRaspberryPiIPAddress = "127.0.0.1";
+    private static final String DEFAULT_RESTaPI_IPAddress = "127.0.0.1";
     private static final String DEFAULT_restTransport = "http";
     private static final int DEFAULT_restPort = 8080;
     private static final int DEFAULT_gpioInterruptHandlerPort = 8181;
-    public static final String REST_PATH = "/remoteRaspberryPI/RESTAPI";
+    public static final String REST_PATH = "/RESTaPI";
 
     public static int getGpioInterruptHandlerPort() {
         int port = -1;
-        String portStr = remoteConectorProps.getProperty("gpioInterruptHandlerPort");
+        String portStr = remoteConnectorProps.getProperty("gpioInterruptHandlerPort");
 
         if (portStr != null)
         {
@@ -69,24 +69,24 @@ public class Globals {
         return port;
     }
 
-    public static String getRemoteRaspberryPiIPAddress() {
-        String remoteRaspberryPiIPAddress = remoteConectorProps.getProperty("remoteRaspberryPiIPAddress", DEFAULT_remoteRaspberryPiIPAddress);
-        String info = "remoteRaspberryPiIPAddress=" + remoteRaspberryPiIPAddress;
+    public static String getRESTaPI_IPAddress() {
+        String rESTaPI_IPAddress = remoteConnectorProps.getProperty("RESTaPI-IPAddress", DEFAULT_RESTaPI_IPAddress);
+        String info = "RESTaPI-IPAddress=" + rESTaPI_IPAddress;
         logger.info(info);
-        return remoteRaspberryPiIPAddress;
+        return rESTaPI_IPAddress;
     }
 
     
     public static String getRestURL()
     {
-        String restURL = Globals.getRestTransport() + "://" + getRemoteRaspberryPiIPAddress() + ":" + Globals.getRestPort() + Globals.REST_PATH;
+        String restURL = Globals.getRestTransport() + "://" + getRESTaPI_IPAddress() + ":" + Globals.getRestPort() + Globals.REST_PATH;
         String info = "RestURL is " + restURL;
         logger.info(info);
         return restURL;    
     }
     
     private static String getRestTransport() {
-        String restTransport = remoteConectorProps.getProperty("restTransport");
+        String restTransport = remoteConnectorProps.getProperty("restTransport");
 
         if (restTransport == null)
         {
@@ -100,7 +100,7 @@ public class Globals {
 
     private static int getRestPort() {
         int restPort = DEFAULT_restPort;
-        String restPortStr = remoteConectorProps.getProperty("restPort");
+        String restPortStr = remoteConnectorProps.getProperty("restPort");
 
         if (restPortStr != null)
         {
@@ -119,7 +119,7 @@ public class Globals {
         return restPort;
     }
 
-    public static void loadRemoteRaspberryPIProperties() throws IOException {
+    public static void loadRESTaPIProperties() throws IOException {
         InputStream propsFile = null;
         
         String filename = System.getProperty(PROPS_FILE_NAME_PROP,PROPS_FILE_NAME); 
@@ -130,14 +130,14 @@ public class Globals {
         {
             //propsFile = Globals.class.getClassLoader().getResourceAsStream(filename);
     		propsFile = new FileInputStream(file);
-            remoteConectorProps.load(propsFile);
+            remoteConnectorProps.load(propsFile);
         }
         else
         {
-            remoteConectorProps.put("remoteRaspberryPiIPAddress", DEFAULT_remoteRaspberryPiIPAddress);
-            remoteConectorProps.put("restTransport", DEFAULT_restTransport);
-            remoteConectorProps.put("restPort", Integer.toString(DEFAULT_restPort));
-            remoteConectorProps.put("gpioInterruptHandlerPort", Integer.toString(DEFAULT_gpioInterruptHandlerPort));
+            remoteConnectorProps.put("RESTaPI-IPAddress", DEFAULT_RESTaPI_IPAddress);
+            remoteConnectorProps.put("restTransport", DEFAULT_restTransport);
+            remoteConnectorProps.put("restPort", Integer.toString(DEFAULT_restPort));
+            remoteConnectorProps.put("gpioInterruptHandlerPort", Integer.toString(DEFAULT_gpioInterruptHandlerPort));
         }
 
         if (propsFile != null) {

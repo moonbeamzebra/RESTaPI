@@ -9,8 +9,8 @@
 		<artifactId>ca.magenta.pi.parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<name>remoteRaspberryPI</name>
-	<description>rRaspPI REST Server for Raspberry Pi</description>
+	<name>RESTaPI</name>
+	<description>RESTaPI: REST API Server for Raspberry Pi</description>
 	<organization>
 		<name>Magenta INC</name>
 	</organization>
@@ -58,7 +58,7 @@
 		</repository>
 	</repositories>
 	<build>
-		<finalName>remoteRaspberryPI</finalName>
+		<finalName>RESTaPI</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

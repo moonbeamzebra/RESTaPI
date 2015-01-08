@@ -50,7 +50,7 @@ public class RemoteRaspberryPiConnector implements Pi4jSystemInfoConnector, Pi4j
         super();
 
         try {
-            Globals.loadRemoteRaspberryPIProperties();
+            Globals.loadRESTaPIProperties();
         } catch (IOException e1) {
             logger.error("", e1);
             // Re-throw

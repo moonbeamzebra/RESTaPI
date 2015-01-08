@@ -50,14 +50,14 @@ public class RemoteWiringpiConnector implements WiringpiConnector {
         super();
 
         try {
-            Globals.loadRemoteRaspberryPIProperties();
+            Globals.loadRESTaPIProperties();
         } catch (IOException e1) {
             logger.error("", e1);
             // Re-throw
             throw new Pi4jConnectorException("", e1);
         }
 
-        String remoteRaspberryPiIPAddress = Globals.getRemoteRaspberryPiIPAddress();
+        String remoteRaspberryPiIPAddress = Globals.getRESTaPI_IPAddress();
         if (remoteRaspberryPiIPAddress != null) {
 
             restURL = Globals.getRestURL();

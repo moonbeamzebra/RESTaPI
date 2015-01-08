@@ -41,7 +41,7 @@ public class RemoteRaspberryPiContextListener implements ServletContextListener 
     public void contextInitialized(ServletContextEvent sce) {
 
         try {
-            Globals.loadRemoteRaspberryPIProperties();
+            Globals.loadRESTaPIProperties();
 
             if ((myThread == null) || (!myThread.getRunner().isAlive())) {
                 myThread = new GpioInterruptHandler(this);
