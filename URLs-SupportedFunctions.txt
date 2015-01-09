@@ -181,5 +181,6 @@ curl http://raspberrypi:8080/RESTaPI/pi4jSystemInfo/clockFrequency/dpi
 
 
 
-
-java -cp jetty-runner-8.1.16.v20140903.jar org.mortbay.jetty.runner.Runner --path /RESTaPI remoteRaspberryPI.war
+On a raspberry PI
+as root
+java -cp jetty-runner-8.1.16.v20140903.jar org.mortbay.jetty.runner.Runner --path RESTaPI.war
