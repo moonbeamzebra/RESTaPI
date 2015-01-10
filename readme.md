@@ -28,7 +28,7 @@ https://github.com/moonbeamzebra/RESTaPI<br>
 Clicking 'Download ZIP' button and unzip it.<br>
 OR <br>
 Simply with 'git'.<br>
-git clone https://github.com/moonbeamzebra/RESTaPI.git
+**git clone https://github.com/moonbeamzebra/RESTaPI.git**
 
 
 *********
@@ -42,7 +42,7 @@ Look for **RESTaPI.tz**<br>
 
 ##INSTALLATION AND RUN INSTRUCTIONS 
 (Java 7 is required on the Raspberry Pi)<br>
-- Transfer RESTaPI.tz to the /home/pi in a Raspberry Pi<br>
+- Transfer RESTaPI.tz to the **/home/pi** in a Raspberry Pi<br>
 - As 'pi' user, untar :<br>
 **cd ~ ; tar zxvf RESTaPI.tz**<br>
 - Go into RESTaPI directory :<br>
@@ -60,9 +60,9 @@ After RESTaPI is started, use a browser to do the above HTTP GETs and see the LE
 *************************
 ##LISTEN TO GPIO INTERRUPTS
 To remotely get GPIO interrupt feedback, let 1st use telnet<br>
-On the Raspberry Pi<br>
+On the Raspberry Pi
 - Connect a toggle switch to RaspiPin.GPIO_02<br>
-From a remote workstation<br>
+<br>From a remote workstation<br>
 - Open a terminal and do :<br>
 **telnet raspberrypi 8181**<br>
 - In a browser :<br>
