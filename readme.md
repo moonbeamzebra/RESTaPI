@@ -2,9 +2,8 @@ Let's take a REST ... with a Pi !
 
 RESTaPI is a REST API server using PI4J library [pi4j.com] (including WiringPi library [wiringpi.com])
 
-
-REMOTELY CONTROL GPIO
 *********************
+#REMOTELY CONTROL GPIO
 The goal is to control remotely the Raspberry Pi GPIO by simply using HTTP GET requests.
 For example, using any browser from any machine (even another Raspberry Pi) and do the following HTTP GETs in order will
 Turn ON and OFF a LED connected to RaspiPin.GPIO_01:
@@ -12,18 +11,17 @@ Turn ON and OFF a LED connected to RaspiPin.GPIO_01:
 http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/export/1
 http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/setDirection/1
 http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/pinMode/1
-# Turn ON
+Turn ON
 http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/digitalWrite/1
-# Turn OFF
+Turn OFF
 http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/digitalWrite/0
 
 Where raspberrypi is the IP address of your Raspberry Pi (set as required)
 
 You could even remotely listen to GPIO interrupts!
 
-
-GET THE MAVEN PROJECT
 *********************
+#GET THE MAVEN PROJECT
 Get the complete Maven project at:
 https://github.com/moonbeamzebra/RESTaPI
 Clicking 'Download ZIP' button and unzip it
@@ -32,21 +30,17 @@ Simply with 'git':
 git clone https://github.com/moonbeamzebra/RESTaPI.git
 
 
-QUICK TRY
 *********
+#QUICK TRY
 For a quick try out, an installation tarball is included in the git project:
 Look for RESTaPI.tz
 
-==================================================================================================================== 
-====================================================================================================================
-= IMPORTANT NOTE:                                                                                                  =
-= Accessing RESTaPI does NOT require any authentication.  Must NOT be used in a production or secure environments. =
-= HTTPS capability will be added in a future version                                                               =
-====================================================================================================================
-====================================================================================================================
+-> IMPORTANT NOTE:
+   - Accessing RESTaPI does NOT require any authentication.  Must NOT be used in a production or secure environments.
+   - HTTPS capability will be added in a future version
 
-INSTALLATION AND RUN INSTRUCTIONS (Java 7 is required on the Raspberry Pi):
-*********************************
+#INSTALLATION AND RUN INSTRUCTIONS 
+(Java 7 is required on the Raspberry Pi)
 - Transfer RESTaPI.tz to the /home/pi in a Raspberry Pi
 - As 'pi' user, untar :                 cd ~ ; tar zxvf RESTaPI.tz
 - Go into RESTaPI directory :           cd ~/RESTaPI
@@ -58,8 +52,8 @@ NOTE: it takes about 60 seconds to start; wait for the following pattern:
 After RESTaPI is started, use a browser to do the above HTTP GETs and see the LED turning ON and OFF
 
 
-LISTEN TO GPIO INTERRUPTS
 *************************
+#LISTEN TO GPIO INTERRUPTS
 To remotely get GPIO interrupt feedback, let 1st use telnet
 On the Raspberry Pi
      Connect a toggle switch to RaspiPin.GPIO_02
@@ -76,22 +70,22 @@ http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/enablePinStateChangeCallback
 Toggle the switch and see the listener feedback in telnet screen
 
 
-BUILD MAVEN PROJECT
 *******************
+#BUILD MAVEN PROJECT
 To build, go in the project directory just download above and do
 mvn clean install
 RESTaPI.war is in ca.magenta.pi.remote/target
 
 
-REST APIs
 *********
+#REST APIs
 Look for URLs-Of-Supported-Functions.txt for the list of ported functions
 The intend was to port into a REST API the low level functions to allow, to the REST users, the full functionality of the ported libraries
 Not all functions are yet ported, but I'm working on that.
 
 
-PROGRAMMATICALLY USE THE REST API
 *********************************
+#PROGRAMMATICALLY USE THE REST API
 Most programming language allows doing HTTP GETs and implement TCP client (for GPIO interrupts).  
 With RESTaPI running, it is then possible to remotely control a Raspberry Pi in many languages.
 
@@ -104,13 +98,13 @@ Note: it is not required to run runExampleViaREST as 'root'
 You could even run/trace/debug those examples from Eclipse on your power-workstation (Windows, MAC, etc) 
  
 
-AUTHOR
 ******
+#AUTHOR
 Jean-Paul Laberge <moonbeamzebra@magenta.ca>
 
 
-ACKNOWLEDGEMENT
 *************** 
+#ACKNOWLEDGEMENT
 PI4J library - pi4j.com - Thanks for this nice project
 WiringPi library - wiringpi.com - Thanks to Gordon Henderson
 
@@ -126,8 +120,8 @@ Raspberry Pi and the associated Logo are trademarks of The Raspberry Pi Foundati
 www.raspberrypi.org
 
 
-LICENSE
 *******
+#LICENSE
 ==========================================================================
 Copyright 2015 Magenta INC
 
