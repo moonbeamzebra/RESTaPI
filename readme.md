@@ -62,7 +62,8 @@ After RESTaPI is started, use a browser to do the above HTTP GETs and see the LE
 To remotely get GPIO interrupt feedback, let 1st use telnet<br>
 On the Raspberry Pi
 - Connect a toggle switch to RaspiPin.GPIO_02<br>
-<br>From a remote workstation<br>
+
+From a remote workstation<br>
 - Open a terminal and do :<br>
 **telnet raspberrypi 8181**<br>
 - In a browser :<br>
