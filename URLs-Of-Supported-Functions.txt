@@ -101,7 +101,7 @@ http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/softPwmWrite/20
 // ControlGpioExample
 curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/setup
 curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/isPinSupported
-curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/exporte/1
+curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/export/1
 curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/isExported
 curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/getDirection
 curl http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/1/setDirection/1
