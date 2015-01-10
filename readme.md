@@ -25,9 +25,9 @@ You could even remotely listen to GPIO interrupts!
 #GET THE MAVEN PROJECT
 Get the complete Maven project at:
 https://github.com/moonbeamzebra/RESTaPI
-Clicking 'Download ZIP' button and unzip it
-Or 
-Simply with 'git':
+Clicking 'Download ZIP' button and unzip it.
+OR 
+Simply with 'git'.
 git clone https://github.com/moonbeamzebra/RESTaPI.git
 
 
@@ -51,8 +51,8 @@ Look for RESTaPI.tz
 -- sudo -s
 - Start the server :                    
 -- ./startRESTaPI
-NOTE: it takes about 60 seconds to start; wait for the following pattern:
-[...] Started SelectChannelConnector@0.0.0.0:8080
+-- NOTE: it takes about 60 seconds to start; wait for the following pattern
+-- [...] Started SelectChannelConnector@0.0.0.0:8080
 
 After RESTaPI is started, use a browser to do the above HTTP GETs and see the LED turning ON and OFF
 
@@ -63,8 +63,10 @@ To remotely get GPIO interrupt feedback, let 1st use telnet
 On the Raspberry Pi
      Connect a toggle switch to RaspiPin.GPIO_02
 From a remote workstation
-- Open a terminal and do :              telnet raspberrypi 8181
-- In a browser :                        Do the following HTTP GETs in order
+- Open a terminal and do :              
+-- telnet raspberrypi 8181
+- In a browser :                       
+-- Do the following HTTP GETs in order
 
 http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/export/0
 http://raspberrypi:8080/RESTaPI/wiringPiGpio/pins/2/pinMode/0
@@ -78,7 +80,7 @@ Toggle the switch and see the listener feedback in telnet screen
 *******************
 #BUILD MAVEN PROJECT
 To build, go in the project directory just download above and do
-mvn clean install
+-- mvn clean install
 RESTaPI.war is in ca.magenta.pi.remote/target
 
 
@@ -111,23 +113,23 @@ Jean-Paul Laberge <moonbeamzebra@magenta.ca>
 *************** 
 #ACKNOWLEDGEMENT
 PI4J library - pi4j.com - Thanks for this nice project
+
 WiringPi library - wiringpi.com - Thanks to Gordon Henderson
 
 Thanks again to PI4J project for nice Maven POMs (very good kick start to the Maven world)
-github.com/Pi4J/pi4j
+--github.com/Pi4J/pi4j
 
 www.mkyong.com - nice examples for REST (Jersey), JSON, etc.
 
 RESTaPI.war is launched by jetty-runner
-mvnrepository.com/artifact/org.mortbay.jetty/jetty-runner 
+--mvnrepository.com/artifact/org.mortbay.jetty/jetty-runner 
 
 Raspberry Pi and the associated Logo are trademarks of The Raspberry Pi Foundation
-www.raspberrypi.org
+--www.raspberrypi.org
 
 
 *******
 #LICENSE
-==========================================================================
 Copyright 2015 Magenta INC
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -141,4 +143,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-==========================================================================
