@@ -82,12 +82,12 @@ Toggle the switch and see the listener feedback in telnet screen
 ##BUILD MAVEN PROJECT
 To build, go in the project directory just download above and do<br>
 **mvn clean install**<br>
-RESTaPI.war is in ca.magenta.pi.remote/target
+**RESTaPI.war** is in ca.magenta.pi.remote/target
 
 
 *********
 ##REST APIs
-Look for URLs-Of-Supported-Functions.txt for the list of ported functions<br>
+Look for **URLs-Of-Supported-Functions.txt** for the list of ported functions<br>
 The intend was to port into a REST API the low level functions to allow, to the REST users, the full functionality of the ported libraries<br>
 Not all functions are yet ported, but I'm working on that.
 
@@ -98,12 +98,12 @@ Most programming language allows doing HTTP GETs and implement TCP client (for G
 With RESTaPI running, it is then possible to remotely control a Raspberry Pi in many languages.
 
 The REST responses are JSON formatted.  Same for the GPIO interrupt notifications.<br>
-See the ca.magenta.pi.remote.common package for the corresponding Java classes.
+See the **ca.magenta.pi.remote.common** package for the corresponding Java classes.
 
-See ca.magenta.pi.example sub-project.<br>
+See **ca.magenta.pi.example** sub-project.<br>
 It contains a subset of Robert Savage (PI4J) examples that are functional to be run remotely (look at runExampleViaREST bash script).<br>
 Note: it is not required to run runExampleViaREST as 'root'<br>
-You could even run/trace/debug those examples from Eclipse on your power-workstation (Windows, MAC, etc) 
+**You could even run/trace/debug those examples from Eclipse on your power-workstation (Windows, MAC, etc)**
  
 
 ******
@@ -119,7 +119,7 @@ WiringPi library - wiringpi.com - Thanks to Gordon Henderson<br>
 Thanks again to PI4J project for nice Maven POMs (very good kick start to the Maven world)<br>
 github.com/Pi4J/pi4j
 
-www.mkyong.com - nice examples for REST (Jersey), JSON, etc.
+www.mkyong.com - nice examples for REST (Jersey), JSON, Maven, etc.
 
 RESTaPI.war is launched by jetty-runner<br>
 mvnrepository.com/artifact/org.mortbay.jetty/jetty-runner 
