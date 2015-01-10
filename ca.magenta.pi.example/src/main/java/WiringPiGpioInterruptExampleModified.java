@@ -41,6 +41,7 @@ public class WiringPiGpioInterruptExampleModified {
         
         System.out.println("<--Pi4J--> GPIO INTERRUPT test program");
 
+        // Modified by jplaberge to use the WiringpiConnector interface
         final WiringpiConnector wiringpiConnector = WiringpiConnectorFactory.getInstance();
         
         // create and add GPIO listener 

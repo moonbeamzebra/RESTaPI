@@ -52,6 +52,7 @@ public class WiringPiGpioExampleModified {
         int dataPtr;
         int l, s, d;
         
+        // Modified by jplaberge to use the WiringpiConnector interface
         WiringpiConnector wiringpiConnector = WiringpiConnectorFactory.getInstance();
         
         System.out.println("<--Pi4J--> GPIO test program");

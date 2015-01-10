@@ -35,6 +35,7 @@ public class WiringPiSoftPWMExampleModified {
     
     public static void main(String[] args) throws InterruptedException {
         
+        // Modified by jplaberge to use the WiringpiConnector interface
         WiringpiConnector wiringpiConnector = WiringpiConnectorFactory.getInstance();
     	
         // initialize wiringPi library
