@@ -93,7 +93,7 @@ Not all functions are yet ported, but I'm working on that.
 
 
 *********************************
-##PROGRAMMATICALLY USE THE REST API
+##PROGRAMMATICALLY USE THE RESTaPI
 Most programming language allows doing HTTP GETs and implement TCP client (for GPIO interrupts).<br>
 With RESTaPI running, it is then possible to remotely control a Raspberry Pi in many languages.
 
