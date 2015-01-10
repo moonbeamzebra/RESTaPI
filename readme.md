@@ -1,4 +1,5 @@
-Let's take a REST ... with a Pi !
+#RESTaPI
+#Let's take a REST ... with a Pi !
 
 RESTaPI is a REST API server using PI4J library [pi4j.com] (including WiringPi library [wiringpi.com])
 
@@ -32,7 +33,7 @@ git clone https://github.com/moonbeamzebra/RESTaPI.git
 
 *********
 #QUICK TRY
-For a quick try out, an installation tarball is included in the git project:
+For a quick try out, an installation tarball is included in the git project
 Look for RESTaPI.tz
 
 -> IMPORTANT NOTE:
@@ -42,10 +43,14 @@ Look for RESTaPI.tz
 #INSTALLATION AND RUN INSTRUCTIONS 
 (Java 7 is required on the Raspberry Pi)
 - Transfer RESTaPI.tz to the /home/pi in a Raspberry Pi
-- As 'pi' user, untar :                 cd ~ ; tar zxvf RESTaPI.tz
-- Go into RESTaPI directory :           cd ~/RESTaPI
-- Sudo as 'root' :                      sudo -s
-- Start the server :                    ./startRESTaPI
+- As 'pi' user, untar :                 
+-- cd ~ ; tar zxvf RESTaPI.tz
+- Go into RESTaPI directory :           
+-- cd ~/RESTaPI
+- Sudo as 'root' :                      
+-- sudo -s
+- Start the server :                    
+-- ./startRESTaPI
 NOTE: it takes about 60 seconds to start; wait for the following pattern:
 [...] Started SelectChannelConnector@0.0.0.0:8080
 
