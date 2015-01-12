@@ -1,3 +1,3 @@
 #!/bin/bash
 # Get jetty-runner-8.1.16.v20140903.jar at http://mvnrepository.com/artifact/org.mortbay.jetty/jetty-runner/8.1.16.v20140903
-java -cp jetty-runner-8.1.16.v20140903.jar org.mortbay.jetty.runner.Runner --path ca.magenta.pi.remote/target/RESTaPI.war
+java -cp jetty-runner-8.1.16.v20140903.jar org.mortbay.jetty.runner.Runner --path /RESTaPI ca.magenta.pi.remote/target/RESTaPI.war
